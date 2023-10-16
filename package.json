@@ -1,0 +1,37 @@
+{
+  "author": "Guillaume Malek <guillaume.malek@outlook.fr>",
+  "contributors": [
+    "Guillaume Malek <guillaume.malek@outlook.fr>"
+  ],
+  "dependencies": {
+    "@fastify/cors": "^8.2.1",
+    "fastify": "^4.17.0",
+    "fastify-plugin": "^4.5.0",
+    "fastify-swagger": "^5.2.0",
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.2.0",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "eslint": "*",
+    "npm-run-all": "*"
+  },
+  "description": "",
+  "license": "MIT",
+  "main": "src/app.ts",
+  "name": "muscle-api",
+  "scripts": {
+    "build": "stack build src/app.ts --platform=node",
+    "ci": "run-s lint test",
+    "dev": "nodemon --quiet",
+    "lint": "eslint --fix --ignore-path .gitignore --ext .js,.ts . && repo-check",
+    "postversion": "git push && git push --tags",
+    "preversion": "npm run ci",
+    "start": "npm run dev",
+    "test": "stack test",
+    "test:watch": "stack test --watch",
+    "update": "stack update"
+  },
+  "version": "1.0.0"
+}
