@@ -1,4 +1,4 @@
-import { exerciseRoutes } from './exercise.route';
+export * from './exercise.route'
 import { RouteOptions } from 'fastify'
 import fp from 'fastify-plugin'
 

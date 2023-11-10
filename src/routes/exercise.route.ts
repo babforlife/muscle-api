@@ -1,4 +1,4 @@
-import { exerciseController } from '../controllers/exercise.controller'
+import { exerciseController } from '../controllers'
 import { environment } from '../environments'
 
 const exerciseUrl = environment.apiUrl + '/exercise'

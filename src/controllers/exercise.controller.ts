@@ -1,6 +1,6 @@
-import { Exercise, IExercise } from './../models/exercise/exercise.model';
+import { IExercise } from '../models';
 import { FastifyReply } from 'fastify'
-import { exerciseService } from '../services/exercise.service'
+import { exerciseService } from '../services'
 
 interface FastifyRequest {
   body: any
@@ -26,18 +26,12 @@ export const exerciseController = {
   save: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
     const exercise = JSON.parse(request.body) as IExercise
     await exerciseService.upsert(exercise)
-    .then(exercises => reply.type('application/json').code(200).send(exercises))
-    .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
+      .then(exercises => reply.type('application/json').code(200).send(exercises))
+      .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
   delete: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
     await exerciseService.delete(request.params.id)
-      .then(() => {
-        console.log('oki')
-        return reply.type('application/json').code(200).send({})
-      })
-      .catch(error => {
-        console.log('err')
-        return reply.type('application/json').code(401).send({ errorMessage: error.message })
-      })
+      .then(() => reply.type('application/json').code(200).send({}))
+      .catch(error =>  reply.type('application/json').code(401).send({ errorMessage: error.message }))
   },
 }
