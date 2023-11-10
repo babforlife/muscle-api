@@ -2,8 +2,9 @@ import { DeleteResult, ObjectId } from 'mongodb'
 import { Exercise, IExercise } from './../models/exercise/exercise.model'
 
 export const exerciseService = {
-  async save(exercise: IExercise): Promise<IExercise> {
-    return new Exercise(exercise).save()
+  async upsert(exercise: IExercise): Promise<IExercise | null> {
+    if(exercise._id === '') return await Exercise.create({name: exercise.name})
+    return await Exercise.findOneAndUpdate({ _id: exercise._id }, exercise, { upsert: true, new: true });
   },
   async getAll(): Promise<IExercise[]> {
     return await Exercise.find()

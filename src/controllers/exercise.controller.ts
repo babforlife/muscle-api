@@ -1,4 +1,4 @@
-import { Exercise } from './../models/exercise/exercise.model';
+import { Exercise, IExercise } from './../models/exercise/exercise.model';
 import { FastifyReply } from 'fastify'
 import { exerciseService } from '../services/exercise.service'
 
@@ -24,10 +24,10 @@ export const exerciseController = {
       .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
   save: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
-    const exercise = JSON.parse(request.body)
-    await Exercise.create({name: exercise.name})
-      .then(exercises => reply.type('application/json').code(200).send(exercises))
-      .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
+    const exercise = JSON.parse(request.body) as IExercise
+    await exerciseService.upsert(exercise)
+    .then(exercises => reply.type('application/json').code(200).send(exercises))
+    .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
   delete: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
     await exerciseService.delete(request.params.id)

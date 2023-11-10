@@ -1,7 +1,7 @@
 import { model, Schema, Document } from 'mongoose'
 
 export interface IExercise extends Document {
-  _id: string;
+  _id?: string;
   name: string;
 }
 

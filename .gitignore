@@ -4,3 +4,5 @@ node_modules
 .output
 .env
 .vscode
+src/environments/environment.dev.ts
+src/models/environment.model.ts
