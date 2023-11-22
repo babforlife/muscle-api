@@ -3,6 +3,5 @@ node_modules
 .cache
 .output
 .env
-.vscode
 src/environments/environment.dev.ts
 src/models/environment.model.ts
