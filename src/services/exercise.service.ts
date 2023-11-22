@@ -3,7 +3,8 @@ import { Exercise, IExercise } from '../models'
 
 export const exerciseService = {
   async upsert(exercise: IExercise): Promise<IExercise | null> {
-    if(exercise._id === '') return await Exercise.create({name: exercise.name})
+    if(exercise._id === '') delete exercise._id
+    if(!exercise._id) return await Exercise.create({name: exercise.name})
     return await Exercise.findOneAndUpdate({ _id: exercise._id }, exercise, { upsert: true, new: true });
   },
   async getAll(): Promise<IExercise[]> {

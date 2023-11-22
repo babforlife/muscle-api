@@ -1,6 +1,6 @@
-import { Session, ISession } from '../models';
+import { program, IProgram } from '../models';
 import { FastifyReply } from 'fastify'
-import { sessionService } from '../services'
+import { programService } from '../services'
 
 interface FastifyRequest {
   body: any
@@ -9,28 +9,28 @@ interface FastifyRequest {
   }
 }
 
-export const sessionController = {
+export const programController = {
   getAll: async (_request: FastifyRequest, reply: FastifyReply): Promise<void> => {
-    await sessionService.getAll()
-      .then(sessions => reply.type('application/json').code(200).send(sessions))
+    await programService.getAll()
+      .then(programs => reply.type('application/json').code(200).send(programs))
       .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
   get: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
-    await sessionService.get(request.params.id)
-      .then(session => {
-        if (session) return reply.type('application/json').code(200).send(session)
+    await programService.get(request.params.id)
+      .then(program => {
+        if (program) return reply.type('application/json').code(200).send(program)
         return reply.type('application/json').code(204).send()
       })
       .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
   save: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
-    const session = JSON.parse(request.body) as ISession
-    await sessionService.upsert(session)
-      .then(sessions => reply.type('application/json').code(200).send(sessions))
+    const program = JSON.parse(request.body) as IProgram
+    await programService.upsert(program)
+      .then(programs => reply.type('application/json').code(200).send(programs))
       .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
   delete: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
-    await sessionService.delete(request.params.id)
+    await programService.delete(request.params.id)
       .then(() => reply.type('application/json').code(200).send({}))
       .catch(error => reply.type('application/json').code(401).send({ errorMessage: error.message }))
   },
