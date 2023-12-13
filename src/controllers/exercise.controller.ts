@@ -23,6 +23,11 @@ export const exerciseController = {
       })
       .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
+  getActivities: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
+    await exerciseService.getActivities(request.params.id)
+      .then(activities => reply.type('application/json').code(200).send(activities))
+      .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
+  },
   save: async (request: FastifyRequest, reply: FastifyReply): Promise<void> => {
     const exercise = JSON.parse(request.body) as IExercise
     await exerciseService.upsert(exercise)

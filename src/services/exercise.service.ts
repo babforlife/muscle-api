@@ -1,5 +1,5 @@
 import { DeleteResult } from 'mongodb'
-import { Exercise, IExercise } from '../models'
+import { Exercise, IExercise, ISeriesExercise, SeriesExercise } from '../models'
 
 export const exerciseService = {
   async upsert(exercise: IExercise): Promise<IExercise | null> {
@@ -12,6 +12,9 @@ export const exerciseService = {
   },
   async get(id: string): Promise<IExercise | null> {
     return await Exercise.findById(id)
+  },
+  async getActivities(id: string): Promise<ISeriesExercise[] | null> {
+    return await SeriesExercise.find({ exercise: id });
   },
   async delete(id: String): Promise<DeleteResult | null> {
     return await Exercise.findOneAndRemove({_id: id})

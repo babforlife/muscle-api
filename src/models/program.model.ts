@@ -15,4 +15,4 @@ export const ProgramsSchema = new Schema({
   exercises: [{ type: Schema.Types.ObjectId, ref: 'exercises' }],
 })
 
-export const program = model<IProgram>('programs', ProgramsSchema)
+export const Program = model<IProgram>('programs', ProgramsSchema)
