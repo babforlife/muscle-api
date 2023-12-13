@@ -1,2 +1,5 @@
 export * from './exercise.model'
 export * from './program.model'
+export * from './activity.model'
+export * from './series.model'
+export * from './series-exercise.model'

@@ -1,26 +1,31 @@
 import { exerciseController } from '../controllers'
 import { environment } from '../environments'
 
-const exerciseUrl = environment.apiUrl + '/exercise'
+const url = environment.apiUrl + '/exercise'
 export const exerciseRoutes = [
   {
     method: 'GET',
-    url: exerciseUrl,
+    url: url,
     handler: exerciseController.getAll,
   },
   {
     method: 'GET',
-    url: exerciseUrl + '/:id',
+    url: url + '/:id',
     handler: exerciseController.get,
   },
   {
+    method: 'GET',
+    url: url + '/:id/activities',
+    handler: exerciseController.getActivities,
+  },
+  {
     method: 'POST',
-    url: exerciseUrl,
+    url: url,
     handler: exerciseController.save,
   },
   {
     method: 'DELETE',
-    url: exerciseUrl + '/:id',
+    url: url + '/:id',
     handler: exerciseController.delete,
   },
 ]

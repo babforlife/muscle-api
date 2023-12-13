@@ -1,4 +1,4 @@
-import { program, IProgram } from '../models';
+import { IProgram } from '../models';
 import { FastifyReply } from 'fastify'
 import { programService } from '../services'
 
