@@ -1,7 +1,6 @@
 import { programController } from '../controllers/program.controller'
-import { environment } from '../environments'
 
-const programUrl = environment.apiUrl + '/program'
+const programUrl = '/program'
 export const programRoutes = [
   {
     method: 'GET',

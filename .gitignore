@@ -2,6 +2,10 @@ node_modules
 *.log*
 .cache
 .output
-.env
 src/environments/environment.dev.ts
 src/models/environment.model.ts
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
