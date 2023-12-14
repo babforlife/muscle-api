@@ -1,7 +1,6 @@
 import { exerciseController } from '../controllers'
-import { environment } from '../environments'
 
-const url = environment.apiUrl + '/exercise'
+const exerciseUrl = '/exercise'
 export const exerciseRoutes = [
   {
     method: 'GET',
