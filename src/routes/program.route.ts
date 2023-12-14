@@ -1,6 +1,6 @@
 import { programController } from '../controllers/program.controller'
 
-const programUrl = '/program'
+const url = '/program'
 export const programRoutes = [
   {
     method: 'GET',

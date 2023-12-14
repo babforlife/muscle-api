@@ -1,7 +1,6 @@
 import { activityController } from '../controllers/activity.controller'
-import { environment } from '../environments'
 
-const url = environment.apiUrl + '/activity'
+const url = '/activity'
 export const activityRoutes = [
   {
     method: 'GET',
