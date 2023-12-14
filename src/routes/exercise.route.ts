@@ -1,6 +1,6 @@
 import { exerciseController } from '../controllers'
 
-const exerciseUrl = '/exercise'
+const url = '/exercise'
 export const exerciseRoutes = [
   {
     method: 'GET',
