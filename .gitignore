@@ -4,6 +4,7 @@ node_modules
 .output
 src/environments/environment.dev.ts
 src/models/environment.model.ts
+build/
 
 .env*
 .flaskenv*

@@ -15,22 +15,26 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@types/node": "*",
+    "@types/node": "^20.8.6",
     "eslint": "*",
-    "npm-run-all": "*"
+    "npm-run-all": "*",
+    "typescript": "^5.3.3"
   },
   "description": "",
   "license": "MIT",
   "main": "src/app.ts",
   "name": "muscle-api",
   "scripts": {
-    "build": "stack build src/app.ts --platform=node",
+    "build": "npx tsc -p tsconfig.json",
+    "buildenv": "npx dotenv-vault@latest build",
     "ci": "run-s lint test",
     "dev": "nodemon --quiet",
     "lint": "eslint --fix --ignore-path .gitignore --ext .js,.ts . && repo-check",
     "postversion": "git push && git push --tags",
     "preversion": "npm run ci",
-    "start": "npm run dev",
+    "pullenv": "npx dotenv-vault@latest pull",
+    "pushenv": "npx dotenv-vault@latest push",
+    "start": "node build/app.js",
     "test": "stack test",
     "test:watch": "stack test --watch",
     "update": "stack update"
