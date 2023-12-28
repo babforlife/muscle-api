@@ -1,3 +1,5 @@
+[![Project License](https://img.shields.io/github/license/babforlife/muscle-api?color=informational)](https://github.com/babforlife/muscle-api/blob/master/LICENSE)
+
 # Muscle API
 ![1702640102555_](https://github.com/babforlife/muscle-api/assets/55501953/ad0fa98a-d304-4b6d-98d5-259c5b672426)
 > An API to get and update data for [Muscle](https://github.com/babforlife/muscle) web application
@@ -15,6 +17,9 @@ $ pnpm pushenv
 $ pnpm buildenv
 # don't forget to commit .env.vault encrypted file
 ```
+
+## 📝 Todo
+- [ ] add user dependency injection / nestJs 
 
 ## 🙏 Thanks
 
