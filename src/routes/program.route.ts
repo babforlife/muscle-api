@@ -1,25 +1,11 @@
+import { FastifyInstance } from 'fastify'
 import { programController } from '../controllers/program.controller'
 
 const url = '/program'
-export const programRoutes = [
-  {
-    method: 'GET',
-    url: url,
-    handler: programController.getAll,
-  },
-  {
-    method: 'GET',
-    url: url + '/:id',
-    handler: programController.get,
-  },
-  {
-    method: 'POST',
-    url: url,
-    handler: programController.save,
-  },
-  {
-    method: 'DELETE',
-    url: url + '/:id',
-    handler: programController.delete,
-  },
-]
+
+export async function programRoutes(server: FastifyInstance) {
+  server.get(url, programController.getAll)
+  server.get(`${url}/:id`, programController.get)
+  server.post(url, programController.save)
+  server.delete(`${url}/:id`, programController.delete)
+}
