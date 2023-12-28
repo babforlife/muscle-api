@@ -8,6 +8,7 @@ import { routes } from './routes'
 if (!process.env.DATABASE_URI) throw new Error('DATABASE_URI is not defined')
 if (!process.env.FASTIFY_PORT) throw new Error('FASTIFY_PORT is not defined')
 if (!process.env.JWT_SECRET) throw new Error('JWT_SECRET is not defined')
+if (!process.env.CORS_ORIGINS) throw new Error('CORS_ORIGINS is not defined')
 
 export const server = fastify({ logger: true })
   .register(fastifyCors, { origin: process.env.CORS_ORIGINS?.split(';')} )
