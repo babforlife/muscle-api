@@ -1,19 +1,25 @@
 import { DeleteResult } from 'mongodb'
 import { Program, IProgram } from '../models'
+import { UserService } from './user.service'
 
-export const programService = {
+class ProgramService extends UserService {
+
   async upsert(session: IProgram): Promise<IProgram | null> {
-    if(session._id === '') delete session._id
-    if(!session._id) return await Program.create({...session})
-    return await Program.findOneAndUpdate({ _id: session._id }, session, { upsert: true, new: true });
-  },
+    if (session._id === '') delete session._id
+    if (!session._id) return await Program.create({ ...session, userId: this.user.id })
+    return await Program.findOneAndUpdate({ _id: session._id, userId: this.user.id }, session, { upsert: true, new: true })
+  }
+
   async getAll(): Promise<IProgram[]> {
-    return await Program.find().collation({locale: 'fr', strength: 2 }).sort({name: 1}).populate('exercises')
-  },
-  async get(id: string): Promise<IProgram | null> {
-    return await Program.findById(id).populate('exercises')
-  },
-  async delete(id: String): Promise<DeleteResult | null> {
-    return await Program.findOneAndRemove({_id: id})
+    return await Program.find({ userId: this.user.id }).collation({ locale: 'fr', strength: 2 }).sort({ name: 1 }).populate('exercises')
+  }
+
+  async get(_id: string): Promise<IProgram | null> {
+    return await Program.findOne({ _id, userId: this.user.id }).populate('exercises')
+  }
+
+  async delete(_id: String): Promise<DeleteResult | null> {
+    return await Program.findOneAndRemove({ _id, userId: this.user.id })
   }
 }
+export const programService = new ProgramService()

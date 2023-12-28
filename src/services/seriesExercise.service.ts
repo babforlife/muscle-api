@@ -1,11 +1,15 @@
 import { DeleteResult } from 'mongodb'
-import { Activity, ISeriesExercise, SeriesExercise } from '../models'
+import { ISeriesExercise, SeriesExercise } from '../models'
+import { UserService } from './user.service'
 
-export const seriesExerciseService = {
+class SeriesExerciseService extends UserService {
   async create(seriesExercise: ISeriesExercise): Promise<ISeriesExercise> {
-    return await SeriesExercise.create(seriesExercise);
-  },
+    seriesExercise.userId = this.user.id
+    return await SeriesExercise.create(seriesExercise)
+  }
+
   async deleteOne(_id: string): Promise<DeleteResult> {
-    return await SeriesExercise.deleteOne({ _id });
+    return await SeriesExercise.deleteOne({ _id })
   }
 }
+export const seriesExerciseService = new SeriesExerciseService()
