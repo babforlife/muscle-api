@@ -1,13 +1,12 @@
-export * from './exercise.route'
-export * from './program.route'
-export * from './activity.route'
+export { activityRoutes } from './activity.route'
+export { exerciseRoutes } from './exercise.route'
+export { programRoutes } from './program.route'
 
 import { exerciseRoutes, programRoutes, activityRoutes } from '.';
-import { RouteOptions } from 'fastify'
 import fp from 'fastify-plugin'
 
-const processRoutes = [...exerciseRoutes, ...programRoutes, ...activityRoutes]
+const processRoutes = [activityRoutes, exerciseRoutes, programRoutes]
 
 export const routes = fp(async (server) => {
-  for (const route of processRoutes) server.route(route as RouteOptions)
+  for (const route of processRoutes) server.register(route)
 })
