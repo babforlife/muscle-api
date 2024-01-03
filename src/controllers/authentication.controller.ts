@@ -20,5 +20,8 @@ export const AuthenticationController = {
         return reply.send({ token })
       })
       .catch(error => reply.type('application/json').code(401).send({ errorMessage: error.message }))
+  },
+  verify: async (request: FastifyRequest<{ Body: string }>, reply: FastifyReply): Promise<void> => {
+    return await request.jwtVerify().then((res) => reply.send(res)).catch((err) => reply.send(err))
   }
 }
