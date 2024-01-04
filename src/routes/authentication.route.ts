@@ -3,7 +3,7 @@ import { AuthenticationController } from '../controllers/authentication.controll
 
 const url = '/authentication'
 export async function authenticationRoutes(server: FastifyInstance) {
-  server.post(`${url}/register`, AuthenticationController.add)
+  server.post(`${url}/register`, AuthenticationController.register)
   server.post(`${url}/login`, AuthenticationController.login)
   server.post(`${url}/verify`, AuthenticationController.verify)
 }

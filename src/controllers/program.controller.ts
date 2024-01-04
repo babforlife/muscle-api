@@ -19,10 +19,9 @@ export const programController = {
       })
       .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },
-  save: async (request: FastifyRequest<{ Body: string }>, reply: FastifyReply): Promise<void> => {
+  save: async (request: FastifyRequest<{ Body: IProgram }>, reply: FastifyReply): Promise<void> => {
     programService.setUser(request.user)
-    const program = JSON.parse(request.body) as IProgram
-    await programService.upsert(program)
+    await programService.upsert(request.body)
       .then(programs => reply.type('application/json').code(200).send(programs))
       .catch(error => reply.type('application/json').code(400).send({ errorMessage: error.message }))
   },

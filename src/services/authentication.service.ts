@@ -2,7 +2,7 @@ import { IUser, UserM } from '../models';
 import { genSaltSync, hashSync, compareSync } from "bcrypt";
 
 export const AuthenticationService = {
-  async add (user: IUser): Promise<IUser> {
+  async register (user: IUser): Promise<IUser> {
     user.email = user.email.toLowerCase()
     if (user.email === '') throw new Error('Veuillez entrer une adresse mail.')
     if (user.password === '') throw new Error('Veuillez entrer un mot de passe.')
