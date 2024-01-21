@@ -19,7 +19,7 @@ class ProgramService extends UserService {
   }
 
   async delete(_id: String): Promise<DeleteResult | null> {
-    return await Program.findOneAndRemove({ _id, userId: this.user.id })
+    return await Program.findOneAndDelete({ _id, userId: this.user.id })
   }
 }
 export const programService = new ProgramService()

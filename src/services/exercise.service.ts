@@ -24,7 +24,7 @@ class ExerciseService extends UserService {
   }
 
   async deleteById(_id: String): Promise<DeleteResult | null> {
-    return await Exercise.findOneAndRemove({ _id, userId: this.user.id })
+    return await Exercise.findOneAndDelete({ _id, userId: this.user.id })
   }
 }
 export const exerciseService = new ExerciseService()

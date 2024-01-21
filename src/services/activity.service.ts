@@ -15,7 +15,7 @@ class ActivityService extends UserService {
   }
 
   async getAll(): Promise<IActivity[]> {
-    return await Activity.find({ userId: this.user.id }).populate({ path: 'session', populate: { path: 'exercise' } })
+    return await Activity.find({ userId: this.user.id }).select('-session').sort({ start: -1 })
   }
 
   async getById(_id: string): Promise<IActivity | null> {
@@ -23,7 +23,7 @@ class ActivityService extends UserService {
   }
 
   async deleteById(_id: string): Promise<IActivity | null> {
-    const activity = await Activity.findOneAndRemove({ _id, userId: this.user.id }).populate('session')
+    const activity = await Activity.findOneAndDelete({ _id, userId: this.user.id }).populate('session')
     if (activity && activity.session) for (let seriesExercise of activity.session) await seriesExerciseService.deleteOne(seriesExercise._id!)
     return activity
   }
