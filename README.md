@@ -1,4 +1,5 @@
 [![Project License](https://img.shields.io/github/license/babforlife/muscle-api?color=informational)](https://github.com/babforlife/muscle-api/blob/master/LICENSE)
+[![Libraries.io](https://img.shields.io/librariesio/github/babforlife/muscle-api)](https://libraries.io/github/babforlife/muscle-api)
 
 # Muscle API
 ![1702640102555_](https://github.com/babforlife/muscle-api/assets/55501953/ad0fa98a-d304-4b6d-98d5-259c5b672426)
