@@ -27,8 +27,8 @@ dependencies:
     specifier: 6.5.0
     version: 6.5.0
   mongoose:
-    specifier: 8.2.1
-    version: 8.2.1
+    specifier: 8.2.2
+    version: 8.2.2
   nodemon:
     specifier: 3.1.0
     version: 3.1.0
@@ -222,13 +222,6 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
-    dev: false
-
-  /@mongodb-js/saslprep@1.1.4:
-    resolution: {integrity: sha512-8zJ8N1x51xo9hwPh6AWnKdLGEC5N3lDa6kms1YHmFBoRhTpJR6HG8wWk0td1MVCu9cD4YBrvjZEtd5Obw0Fbnw==}
-    requiresBuild: true
-    dependencies:
-      sparse-bitfield: 3.0.3
     dev: false
 
   /@mongodb-js/saslprep@1.1.5:
@@ -498,6 +491,7 @@ packages:
   /bson@6.4.0:
     resolution: {integrity: sha512-6/gSSEdbkuFlSb+ufj5jUSU4+wo8xQOwm2bDSqwmxiPE17JTpsP63eAwoN8iF8Oy4gJYj+PAL3zdRCTdaw5Y1g==}
     engines: {node: '>=16.20.1'}
+    deprecated: a critical bug affecting zSeries s390x big-endian systems is fixed in bson@6.5.0
     dev: false
 
   /buffer@6.0.3:
@@ -1309,7 +1303,7 @@ packages:
       socks:
         optional: true
     dependencies:
-      '@mongodb-js/saslprep': 1.1.4
+      '@mongodb-js/saslprep': 1.1.5
       bson: 6.4.0
       mongodb-connection-string-url: 3.0.0
     dev: false
@@ -1346,8 +1340,8 @@ packages:
       mongodb-connection-string-url: 3.0.0
     dev: false
 
-  /mongoose@8.2.1:
-    resolution: {integrity: sha512-UgZZbXSJH0pdU936qj3FyVI+sBsMoGowFnL5R/RYrA50ayn6+ZYdVr8ehsRgNxRcMYwoNld5XzHIfkFRJTePEw==}
+  /mongoose@8.2.2:
+    resolution: {integrity: sha512-6sMxe1d3k/dBjiOX4ExNTNOP0g1x0iq8eXyg+ttgIXM3HLnQ0IUyXRwVVAPFFY6O4/8uYN5dB0Ec72FrexbPpw==}
     engines: {node: '>=16.20.1'}
     dependencies:
       bson: 6.4.0
