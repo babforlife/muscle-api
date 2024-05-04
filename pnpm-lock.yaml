@@ -12,8 +12,8 @@ importers:
         specifier: 8.5.0
         version: 8.5.0
       '@fastify/jwt':
-        specifier: 7.2.4
-        version: 7.2.4
+        specifier: 8.0.1
+        version: 8.0.1
       bcrypt:
         specifier: 5.1.1
         version: 5.1.1
@@ -110,8 +110,8 @@ packages:
   '@fastify/fast-json-stringify-compiler@4.3.0':
     resolution: {integrity: sha512-aZAXGYo6m22Fk1zZzEUKBvut/CIIQe/BapEORnxiD5Qr0kPHqqI69NtEMCme74h+at72sPhbkb4ZrLd1W3KRLA==}
 
-  '@fastify/jwt@7.2.4':
-    resolution: {integrity: sha512-aWJzVb3iZb9xIPjfut8YOrkNEKrZA9xyF2C2Hv9nTheFp7CQPGIZMNTyf3848BsD27nw0JLk8jVLZ2g2DfJOoQ==}
+  '@fastify/jwt@8.0.1':
+    resolution: {integrity: sha512-295bd7V6bDCnZOu8MAQgM6r7V1KILB+kdEq1q6nbHfXCnML569n7NSo3WzeLDG6IAqDl+Rhzi1vjxwaNHhRCBA==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -468,9 +468,9 @@ packages:
   fast-json-stringify@5.10.0:
     resolution: {integrity: sha512-fu1BhzPzgOdvK+sVhSPFzm06DQl0Dwbo+NQxWm21k03ili2wsJExXbGZ9qsD4Lsn7zFGltF8h9I1fuhk4JPnrQ==}
 
-  fast-jwt@3.3.2:
-    resolution: {integrity: sha512-H+JYxaFy2LepiC1AQWM/2hzKlQOWaWUkEnu/yebhYu4+ameb3qG77WiRZ1Ct6YBk6d/ESsNguBfTT5+q0XMtKg==}
-    engines: {node: '>=16 <22'}
+  fast-jwt@4.0.1:
+    resolution: {integrity: sha512-+mdSoH0QdOdFSbbGBctJu7L1yfXRtbmjbVJ4W/PEjyvivobDena0RKwihtBkOML1P+kUJ1QuewnH8u+mROsR1w==}
+    engines: {node: '>=16'}
 
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
@@ -1304,11 +1304,11 @@ snapshots:
     dependencies:
       fast-json-stringify: 5.10.0
 
-  '@fastify/jwt@7.2.4':
+  '@fastify/jwt@8.0.1':
     dependencies:
       '@fastify/error': 3.4.1
       '@lukeed/ms': 2.0.2
-      fast-jwt: 3.3.2
+      fast-jwt: 4.0.1
       fastify-plugin: 4.5.1
       steed: 1.1.3
 
@@ -1693,7 +1693,7 @@ snapshots:
       json-schema-ref-resolver: 1.0.1
       rfdc: 1.3.1
 
-  fast-jwt@3.3.2:
+  fast-jwt@4.0.1:
     dependencies:
       '@lukeed/ms': 2.0.2
       asn1.js: 5.4.1
