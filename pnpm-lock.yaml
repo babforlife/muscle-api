@@ -27,8 +27,8 @@ importers:
         specifier: 4.5.1
         version: 4.5.1
       mongodb:
-        specifier: 6.8.1
-        version: 6.8.1
+        specifier: 6.9.0
+        version: 6.9.0
       mongoose:
         specifier: 8.6.2
         version: 8.6.2
@@ -779,8 +779,8 @@ packages:
       socks:
         optional: true
 
-  mongodb@6.8.1:
-    resolution: {integrity: sha512-qsS+gl5EJb+VzJqUjXSZ5Y5rbuM/GZlZUEJ2OIVYP10L9rO9DQ0DGp+ceTzsmoADh6QYMWd9MSdG9IxRyYUkEA==}
+  mongodb@6.9.0:
+    resolution: {integrity: sha512-UMopBVx1LmEUbW/QE0Hw18u583PEDVQmUmVzzBRH0o/xtE9DBRA5ZYLOjpLIa03i8FXjzvQECJcqoMvCXftTUA==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
@@ -1990,7 +1990,7 @@ snapshots:
       bson: 6.7.0
       mongodb-connection-string-url: 3.0.0
 
-  mongodb@6.8.1:
+  mongodb@6.9.0:
     dependencies:
       '@mongodb-js/saslprep': 1.1.5
       bson: 6.7.0
