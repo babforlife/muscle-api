@@ -30,8 +30,8 @@ importers:
         specifier: 6.11.0
         version: 6.11.0
       mongoose:
-        specifier: 8.8.2
-        version: 8.8.2
+        specifier: 8.8.3
+        version: 8.8.3
       nodemon:
         specifier: 3.1.7
         version: 3.1.7
@@ -143,9 +143,6 @@ packages:
   '@mapbox/node-pre-gyp@1.0.11':
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
-
-  '@mongodb-js/saslprep@1.1.5':
-    resolution: {integrity: sha512-XLNOMH66KhJzUJNwT/qlMnS4WsNDWD5ASdyaSH3EtK+F4r/CFGa3jT4GNi4mfOitGvWXtdLgQJkQjxSVrio+jA==}
 
   '@mongodb-js/saslprep@1.1.9':
     resolution: {integrity: sha512-tVkljjeEaAhCqTzajSdgbQ6gE6f3oneVwa3iXR6csiEwXXOFsiC6Uh9iAjAhXPtqa/XMDHWjjeNH/77m/Yq2dw==}
@@ -307,10 +304,6 @@ packages:
 
   bson@6.10.0:
     resolution: {integrity: sha512-ROchNosXMJD2cbQGm84KoP7vOGPO6/bOAW0veMMbzhXLqoZptcaYRVLitwvuhwhjjpU1qP4YZRWLhgETdgqUQw==}
-    engines: {node: '>=16.20.1'}
-
-  bson@6.7.0:
-    resolution: {integrity: sha512-w2IquM5mYzYZv6rs3uN2DZTOBe2a0zXLj53TGDqwF4l6Sz/XsISrisXOJihArF9+BZ6Cq/GjVht7Sjfmri7ytQ==}
     engines: {node: '>=16.20.1'}
 
   buffer@6.0.3:
@@ -814,8 +807,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@8.8.2:
-    resolution: {integrity: sha512-jCTSqDANfRzk909v4YoZQi7jlGRB2MTvgG+spVBc/BA4tOs1oWJr//V6yYujqNq9UybpOtsSfBqxI0dSOEFJHQ==}
+  mongoose@8.8.3:
+    resolution: {integrity: sha512-/I4n/DcXqXyIiLRfAmUIiTjj3vXfeISke8dt4U4Y8Wfm074Wa6sXnQrXN49NFOFf2mM1kUdOXryoBvkuCnr+Qw==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -1362,10 +1355,6 @@ snapshots:
       - encoding
       - supports-color
 
-  '@mongodb-js/saslprep@1.1.5':
-    dependencies:
-      sparse-bitfield: 3.0.3
-
   '@mongodb-js/saslprep@1.1.9':
     dependencies:
       sparse-bitfield: 3.0.3
@@ -1522,8 +1511,6 @@ snapshots:
       fill-range: 7.0.1
 
   bson@6.10.0: {}
-
-  bson@6.7.0: {}
 
   buffer@6.0.3:
     dependencies:
@@ -2000,8 +1987,8 @@ snapshots:
 
   mongodb@6.10.0:
     dependencies:
-      '@mongodb-js/saslprep': 1.1.5
-      bson: 6.7.0
+      '@mongodb-js/saslprep': 1.1.9
+      bson: 6.10.0
       mongodb-connection-string-url: 3.0.0
 
   mongodb@6.11.0:
@@ -2010,9 +1997,9 @@ snapshots:
       bson: 6.10.0
       mongodb-connection-string-url: 3.0.0
 
-  mongoose@8.8.2:
+  mongoose@8.8.3:
     dependencies:
-      bson: 6.7.0
+      bson: 6.10.0
       kareem: 2.6.3
       mongodb: 6.10.0
       mpath: 0.9.0
