@@ -27,8 +27,8 @@ importers:
         specifier: 4.5.1
         version: 4.5.1
       mongodb:
-        specifier: 6.11.0
-        version: 6.11.0
+        specifier: 6.12.0
+        version: 6.12.0
       mongoose:
         specifier: 8.8.4
         version: 8.8.4
@@ -304,6 +304,10 @@ packages:
 
   bson@6.10.0:
     resolution: {integrity: sha512-ROchNosXMJD2cbQGm84KoP7vOGPO6/bOAW0veMMbzhXLqoZptcaYRVLitwvuhwhjjpU1qP4YZRWLhgETdgqUQw==}
+    engines: {node: '>=16.20.1'}
+
+  bson@6.10.1:
+    resolution: {integrity: sha512-P92xmHDQjSKPLHqFxefqMxASNq/aWJMEZugpCjf+AF/pgcUpMMQCg7t7+ewko0/u8AapvF3luf/FoehddEK+sA==}
     engines: {node: '>=16.20.1'}
 
   buffer@6.0.3:
@@ -780,12 +784,12 @@ packages:
       socks:
         optional: true
 
-  mongodb@6.11.0:
-    resolution: {integrity: sha512-yVbPw0qT268YKhG241vAMLaDQAPbRyTgo++odSgGc9kXnzOujQI60Iyj23B9sQQFPSvmNPvMZ3dsFz0aN55KgA==}
+  mongodb@6.12.0:
+    resolution: {integrity: sha512-RM7AHlvYfS7jv7+BXund/kR64DryVI+cHbVAy9P61fnb1RcWZqOW1/Wj2YhqMCx+MuYhqTRGv7AwHBzmsCKBfA==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
-      '@mongodb-js/zstd': ^1.1.0
+      '@mongodb-js/zstd': ^1.1.0 || ^2.0.0
       gcp-metadata: ^5.2.0
       kerberos: ^2.0.1
       mongodb-client-encryption: '>=6.0.0 <7'
@@ -1512,6 +1516,8 @@ snapshots:
 
   bson@6.10.0: {}
 
+  bson@6.10.1: {}
+
   buffer@6.0.3:
     dependencies:
       base64-js: 1.5.1
@@ -1991,10 +1997,10 @@ snapshots:
       bson: 6.10.0
       mongodb-connection-string-url: 3.0.0
 
-  mongodb@6.11.0:
+  mongodb@6.12.0:
     dependencies:
       '@mongodb-js/saslprep': 1.1.9
-      bson: 6.10.0
+      bson: 6.10.1
       mongodb-connection-string-url: 3.0.0
 
   mongoose@8.8.4:
