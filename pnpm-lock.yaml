@@ -37,14 +37,14 @@ importers:
         version: 3.1.10
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@types/node@20.17.32)(typescript@5.8.3)
+        version: 10.9.2(@types/node@20.17.41)(typescript@5.8.3)
     devDependencies:
       '@types/bcrypt':
         specifier: ^5.0.2
         version: 5.0.2
       '@types/node':
         specifier: ^20.11.5
-        version: 20.17.32
+        version: 20.17.41
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -174,8 +174,8 @@ packages:
   '@types/bcrypt@5.0.2':
     resolution: {integrity: sha512-6atioO8Y75fNcbmj0G7UjI9lXN2pQ/IGJ2FWT4a/btd0Lk9lQalHLKhkgKVZ3r+spnmWUKfbMi1GEe9wyHQfNQ==}
 
-  '@types/node@20.17.32':
-    resolution: {integrity: sha512-zeMXFn8zQ+UkjK4ws0RiOC9EWByyW1CcVmLe+2rQocXRsGEDxUCwPEIVgpsGcLHS/P8JkT0oa3839BRABS0oPw==}
+  '@types/node@20.17.41':
+    resolution: {integrity: sha512-bOB0a6u/e7Ey/Gyc+ghRg+xoXFGYug4I7pdvwxudh+Ewmk93Z4wTudn4NIKiIRYQyujf9jm2uTBzQK8tg8oUeQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -1354,9 +1354,9 @@ snapshots:
 
   '@types/bcrypt@5.0.2':
     dependencies:
-      '@types/node': 20.17.32
+      '@types/node': 20.17.41
 
-  '@types/node@20.17.32':
+  '@types/node@20.17.41':
     dependencies:
       undici-types: 6.19.8
 
@@ -2322,14 +2322,14 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  ts-node@10.9.2(@types/node@20.17.32)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@20.17.41)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.17.32
+      '@types/node': 20.17.41
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3
