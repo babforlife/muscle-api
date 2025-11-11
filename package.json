@@ -9,7 +9,7 @@
     "bcrypt": "5.1.1",
     "dotenv": "16.6.1",
     "fastify": "4.29.1",
-    "fastify-plugin": "4.5.1",
+    "fastify-plugin": "5.1.0",
     "mongodb": "6.20.0",
     "mongoose": "8.19.3",
     "nodemon": "3.1.10",
