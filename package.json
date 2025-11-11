@@ -6,7 +6,7 @@
   "dependencies": {
     "@fastify/cors": "8.5.0",
     "@fastify/jwt": "7.2.4",
-    "bcrypt": "5.1.1",
+    "bcrypt": "6.0.0",
     "dotenv": "16.6.1",
     "fastify": "4.29.1",
     "fastify-plugin": "4.5.1",
@@ -16,7 +16,7 @@
     "ts-node": "10.9.2"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
+    "@types/bcrypt": "^6.0.0",
     "@types/node": "^20.11.5",
     "eslint": "8.57.1",
     "npm-run-all2": "5.0.2",
